@@ -1,141 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Sender MERN App</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h1, h2 {
-            color: #007BFF;
-        }
-        code {
-            background: #eee;
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-        pre {
-            background: #f4f4f4;
-            padding: 10px;
-            border-radius: 4px;
-            overflow-x: auto;
-        }
-        ul {
-            list-style-type: disc;
-            margin: 0;
-            padding: 0 20px;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        .emoji {
-            font-size: 1.2em;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1 class="emoji">📧 Email Sender MERN App</h1>
-        <p>Welcome to the Email Sender MERN App! This project allows you to send emails using Google OAuth with dynamically generated refresh tokens.</p>
+# 📧 Email Sender MERN App
 
-        <h2 class="emoji">🗂️ Folder Structure</h2>
-        <ul>
-            <li><strong>ui/</strong>: Contains the frontend React application.</li>
-            <li><strong>api/</strong>: Contains the backend Node.js/Express application.</li>
-        </ul>
+Welcome to the Email Sender MERN App! This project enables you to send emails using Google OAuth with dynamically generated refresh tokens.
 
-        <h2 class="emoji">🚀 Getting Started</h2>
-        <h3>Prerequisites</h3>
-        <ul>
-            <li>Node.js and npm installed.</li>
-            <li>A MongoDB server (local or cloud-based).</li>
-            <li>A Google Cloud project with OAuth 2.0 credentials.</li>
-        </ul>
+## 🗂️ Folder Structure
 
-        <h3>Setup</h3>
+- **`ui/`**: Contains the frontend React application.
+- **`api/`**: Contains the backend Node.js/Express application.
 
-        <h4>1. Backend Setup (<code>api/</code>)</h4>
-        <ol>
-            <li><strong>Navigate to the backend directory:</strong>
-                <pre><code>cd api</code></pre>
-            </li>
-            <li><strong>Install dependencies:</strong>
-                <pre><code>npm install</code></pre>
-            </li>
-            <li><strong>Configure environment variables:</strong>
-                <p>Create a <code>.env</code> file in the <code>api/</code> directory and add the following:</p>
-                <pre><code>PORT=5000
-MONGO_URI=your_mongodb_connection_string
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-REDIRECT_URI=your_redirect_uri
-</code></pre>
-            </li>
-            <li><strong>Run the backend server:</strong>
-                <pre><code>npm start</code></pre>
-                <p>The backend server will start on <code>http://localhost:5000</code>.</p>
-            </li>
-        </ol>
+## 🚀 Getting Started
 
-        <h4>2. Frontend Setup (<code>ui/</code>)</h4>
-        <ol>
-            <li><strong>Navigate to the frontend directory:</strong>
-                <pre><code>cd ui</code></pre>
-            </li>
-            <li><strong>Install dependencies:</strong>
-                <pre><code>npm install</code></pre>
-            </li>
-            <li><strong>Configure environment variables:</strong>
-                <p>Create a <code>.env</code> file in the <code>ui/</code> directory and add the following:</p>
-                <pre><code>REACT_APP_API_URL=http://localhost:5000
-</code></pre>
-            </li>
-            <li><strong>Run the frontend application:</strong>
-                <pre><code>npm start</code></pre>
-                <p>The frontend application will start on <code>http://localhost:3000</code>.</p>
-            </li>
-        </ol>
+### Prerequisites
 
-        <h2 class="emoji">✉️ How to Use</h2>
-        <ol>
-            <li><strong>Authenticate with Google:</strong>
-                <p>Go to the frontend app, and sign in with Google. The backend handles the OAuth flow and provides access and refresh tokens.</p>
-            </li>
-            <li><strong>Send Emails:</strong>
-                <p>Once authenticated, use the app to compose and send emails. The frontend sends email data to the backend, which uses the Google API to send the email.</p>
-            </li>
-        </ol>
+- Node.js and npm installed.
+- A MongoDB server (local or cloud-based).
+- A Google Cloud project with OAuth 2.0 credentials.
 
-        <h2 class="emoji">📚 API Endpoints</h2>
-        <ul>
-            <li><strong>POST /api/auth/google</strong>: Starts the Google OAuth flow.</li>
-            <li><strong>GET /api/auth/callback</strong>: Handles the OAuth callback and exchanges code for tokens.</li>
-            <li><strong>POST /api/send-email</strong>: Sends an email.</li>
-        </ul>
+### Setup
 
-        <h2 class="emoji">🛠️ Troubleshooting</h2>
-        <ul>
-            <li>Ensure MongoDB is running and accessible.</li>
-            <li>Verify Google OAuth credentials and redirect URIs in the Google Cloud Console and <code>.env</code> files.</li>
-            <li>Check frontend and backend logs for errors and refer to the documentation for solutions.</li>
-        </ul>
-    </div>
-</body>
-</html>
+#### 1. Backend Setup (`api/`)
+
+1. **Navigate to the backend directory:**
+
+    ```bash
+    cd api
+    ```
+
+2. **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3. **Configure environment variables:**
+
+    Create a `.env` file in the `api/` directory and add the following:
+
+    ```
+    PORT=5000
+    MONGO_URI=your_mongodb_connection_string
+    GOOGLE_CLIENT_ID=your_google_client_id
+    GOOGLE_CLIENT_SECRET=your_google_client_secret
+    REDIRECT_URI=your_redirect_uri
+    ```
+
+4. **Run the backend server:**
+
+    ```bash
+    npm start
+    ```
+
+    The backend server will start on `http://localhost:5000`.
+
+#### 2. Frontend Setup (`ui/`)
+
+1. **Navigate to the frontend directory:**
+
+    ```bash
+    cd ui
+    ```
+
+2. **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3. **Configure environment variables:**
+
+    Create a `.env` file in the `ui/` directory and add the following:
+
+    ```
+    REACT_APP_API_URL=http://localhost:5000
+    ```
+
+4. **Run the frontend application:**
+
+    ```bash
+    npm start
+    ```
+
+    The frontend application will start on `http://localhost:3000`.
+
+## ✉️ How to Use
+
+1. **Authenticate with Google:**
+
+   - Navigate to the frontend app and sign in with Google. The backend handles the OAuth flow and provides access and refresh tokens.
+
+2. **Send Emails:**
+
+   - Once authenticated, use the app to compose and send emails. The frontend sends email data to the backend, which uses the Google API to send the email.
+
+## 📚 API Endpoints
+
+- **POST /api/auth/google**: Initiates the Google OAuth flow.
+- **GET /api/auth/callback**: Handles the OAuth callback and exchanges code for tokens.
+- **POST /api/send-email**: Sends an email.
+
+## 🛠️ Troubleshooting
+
+- Ensure MongoDB is running and accessible.
+- Verify Google OAuth credentials and redirect URIs in the Google Cloud Console and `.env` files.
+- Check frontend and backend logs for errors and refer to the documentation for solutions.
+
+---
 
