@@ -35,7 +35,7 @@ function App() {
 
   const disconnect = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/disconnect?email=${email}`, {
+      const response = await fetch(`http://localhost:5000/disconnect?userID=123`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -85,6 +85,10 @@ function App() {
       const result = await response.json();
       if (result.success) {
         alert('Email sent successfully');
+        setSenderEmail('');
+        setReceiverEmail('');
+        setSubject('');
+        setMessage('');
       }
     } catch (error) {
       console.log(error);

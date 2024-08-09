@@ -39,6 +39,7 @@ app.get('/auth', (req, res) => {
             'https://mail.google.com/', //scope for mail sending
             'https://www.googleapis.com/auth/userinfo.email' // Scope to get the user's email
         ],
+        prompt: 'consent',
         state: state
     });
     res.status(200).json({ url, success: true, message: "success" });
@@ -129,19 +130,7 @@ app.post('/sendMail', async (req, res) => {
         };
 
         const result = await transporter.sendMail(mailOptions);
-
-        // Save the email details including messageId and possibly threadId to the database
-        const gmail = google.gmail({ version: 'v1', auth: oauth2Client });
-
-        // Save the email details including messageId to the database
-        const newEmail = new Email({
-            messageId: result.messageId, // Assuming Nodemailer provides this correctly
-            subject,
-            from: senderMail,
-            to: receiverMail,
-        });
-
-        await newEmail.save();
+                
         res.status(200).json({ success: true, message: 'Email sent successfully' });
     } catch (error) {
         console.log(error);
@@ -176,5 +165,4 @@ app.get('/', (req, res) => {
 
 app.listen(5000, () => {
     console.log('Server listening on port 3000  --> http://localhost:5000');
-    console.log('click on this link to get auth: http://localhost:3000/auth');
 });
